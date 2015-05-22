@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.Window;
 
 import com.emoiluj.doubleviewpager.DoubleViewPager;
