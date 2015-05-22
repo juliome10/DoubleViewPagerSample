@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.Window;
 
 import com.emoiluj.doubleviewpager.DoubleViewPager;
@@ -14,16 +15,25 @@ import com.emoiluj.doubleviewpager.DoubleViewPagerAdapter;
 public class MainActivity extends Activity{
 
 	private DoubleViewPager viewpager;
-
+	private int horizontalChilds;
+	private int verticalChilds;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 		
+		loadDataFromSplash();
 		loadUI();
 	}
 
+	private void loadDataFromSplash(){
+		horizontalChilds = getIntent().getExtras().getInt("HORIZONTAL");
+		verticalChilds = getIntent().getExtras().getInt("VERTICAL");
+	}
+	
 	private void loadUI() {
 
 		ArrayList<PagerAdapter> verticalAdapters = new ArrayList<PagerAdapter>();
@@ -35,8 +45,8 @@ public class MainActivity extends Activity{
 
 	private void generateVerticalAdapters(ArrayList<PagerAdapter> verticalAdapters) {
 		//5 in horizontal
-		for (int i=0; i<5; i++){
-			verticalAdapters.add(new VerticalPagerAdapter(this, i));
+		for (int i=0; i<horizontalChilds; i++){
+			verticalAdapters.add(new VerticalPagerAdapter(this, i, verticalChilds));
 		}
 	}
 

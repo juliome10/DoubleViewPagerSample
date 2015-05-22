@@ -18,15 +18,17 @@ public class VerticalPagerAdapter extends PagerAdapter{
 
 	private Context mContext;
 	private int mParent;
+	private int mChilds;
 
-	public VerticalPagerAdapter(Context c, int parent){
+	public VerticalPagerAdapter(Context c, int parent, int childs){
 		mContext = c;
 		mParent = parent;
+		mChilds = childs;
 	}
 
 	@Override
 	public int getCount() {
-		return 5;
+		return mChilds;
 	}
 
 	@Override
