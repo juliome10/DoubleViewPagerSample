@@ -42,13 +42,12 @@ public class VerticalPagerAdapter extends PagerAdapter{
 		RelativeLayout relative = new RelativeLayout(mContext);
 		LayoutParams relativelp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		relative.setLayoutParams(relativelp);
-		relative.setGravity(Gravity.CENTER);
 
 		TextView tv = new TextView(mContext);
 		LayoutParams tvlp=new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		tvlp.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
 		tv.setLayoutParams(tvlp);
-		tv.setText("P:"+mParent + " H:"+position);
+		tv.setText("P:"+mParent + " C:"+position);
 		tv.setTextSize(70);
 		setColors(relative, tv);
 		relative.addView(tv);
