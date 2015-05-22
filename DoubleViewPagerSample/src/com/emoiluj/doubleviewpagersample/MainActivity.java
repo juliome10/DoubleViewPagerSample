@@ -43,7 +43,6 @@ public class MainActivity extends Activity{
 	}
 
 	private void generateVerticalAdapters(ArrayList<PagerAdapter> verticalAdapters) {
-		//5 in horizontal
 		for (int i=0; i<horizontalChilds; i++){
 			verticalAdapters.add(new VerticalPagerAdapter(this, i, verticalChilds));
 		}

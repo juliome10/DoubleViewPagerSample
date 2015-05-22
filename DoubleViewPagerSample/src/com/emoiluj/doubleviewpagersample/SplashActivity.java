@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SplashActivity extends Activity{
 
@@ -71,6 +72,8 @@ public class SplashActivity extends Activity{
 					intent.putExtra("VERTICAL", Integer.valueOf(vertical.getText().toString()));
 					startActivity(intent);
 					finish();
+				}else{
+					Toast.makeText(getApplicationContext(), "Boxes can not be empty!", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
